@@ -17,22 +17,27 @@
   <header class="header">
     <div>Encrypter</div>
   </header>
-  <section>
-    <article class="container_main">
+  <section class="container_main">
+    <article class="container_primary">
       <div class="container_input">
-        <textarea name="" id="" placeholder="Ingresa tu texto aquí" rows="10" cols="30"></textarea>
+        <textarea class="container_text_main" name="" id="inputTxt" placeholder="Ingresa tu texto aquí"
+          rows="10"></textarea>
       </div>
       <div class="container_buttons">
-        <button class="btn btn_primary">Encriptar</button>
-        <button class="btn btn_secondary">Desencriptar</button>
+        <button class="btn btn_encrypter">Encriptar</button>
+        <button class="btn btn_decryptor">Desencriptar</button>
+        <button class="btn btn_clear">Limpiar</button>
       </div>
     </article>
 
     <article class="container_secondary">
-      <div>
+      <textarea type="text" readonly class="text_encrypted"></textarea>
+      <div id="hidden_div">
+        <img class="image_search" src="./assets/Muñeco.png" alt="">
         <p class="message_not_found">Ningún Mensaje fue encontrado</p>
         <p class="message_input_text">Ingrese el texto que deseas encriptar o desencriptar</p>
       </div>
+      <button class=" btn btn_copy">Copiar</button>
     </article>
   </section>
 

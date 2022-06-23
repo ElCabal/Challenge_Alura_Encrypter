@@ -1,9 +1,6 @@
 body {
-  background-color: #f3f5fc;
-
-  font-size: rem;
-  display: flex;
-  flex-direction: column;
+  background-color: #010617;
+  display: grid;
   min-height: 100vh;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -15,40 +12,52 @@ body {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 30px;
+  background-color: chocolate;
 }
 
 .container_main {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-.container_input {
-  text-align: center;
+  display: grid;
 }
 
+.container_primary {
+  background-color: brown;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.container_input {
+  background-color: #4f46e5;
+  text-align: center;
+}
 .container_input textarea {
+  width: 100%;
+  outline: none;
   background: none;
   border: none;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .container_buttons {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 1rem;
 }
 
 .btn {
   padding: 15px;
   border-radius: 10px;
+  width: 300px;
 }
 
-.btn_primary {
+.btn_encrypter {
   background-color: #4f46e5;
   color: white;
 }
-.btn_secondary {
+.btn_decryptor {
   background-color: #f3f5fc;
   border-color: #4f46e5;
 }
@@ -60,6 +69,16 @@ body {
   padding: 10px;
   text-align: center;
 }
+.text_encrypted {
+  display: none;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  height: 80%;
+}
+.image_search {
+  display: none;
+}
 
 .message_not_found {
   font-size: 1.5rem;
@@ -70,18 +89,59 @@ body {
   font-size: 1rem;
 }
 
-footer {
-  text-align: center;
-  font-size: large;
+.btn_copy {
+  display: none;
 }
 
-@media screen and (min-width: 768px) {
+footer {
+  background-color: chocolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  font-size: large;
+  align-items: center;
+}
+
+@media screen and (min-width: 640px) {
   .container_buttons {
     display: flex;
     flex-direction: row;
-    width: 100%;
+    gap: 1rem;
   }
   .btn {
-    width: 100%;
+    width: 200px;
+  }
+  .container_input textarea {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container_main {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-areas: "element1 element2";
+  }
+  .image_search {
+    display: block;
+  }
+
+  .container_primary {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 18px;
+  }
+
+  .container_secondary {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .container_input textarea {
+    width: 70%;
   }
 }
