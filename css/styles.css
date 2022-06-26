@@ -1,5 +1,5 @@
 body {
-  background-color: #010617;
+  background-color: #e2e8f0;
   display: grid;
   min-height: 100vh;
   padding-left: 1rem;
@@ -8,11 +8,10 @@ body {
 }
 
 .header {
-  padding: 2rem;
+  padding-left: 2rem;
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 30px;
-  background-color: chocolate;
 }
 
 .container_main {
@@ -20,7 +19,6 @@ body {
 }
 
 .container_primary {
-  background-color: brown;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,7 +26,6 @@ body {
 }
 
 .container_input {
-  background-color: #4f46e5;
   text-align: center;
 }
 .container_input textarea {
@@ -40,44 +37,91 @@ body {
 }
 
 .container_buttons {
+  padding-left: 2rem;
+}
+.validate {
+  font-size: 15px;
+}
+.validate span {
+  border-radius: 50px;
+  width: 1rem;
+  height: 1rem;
+  background-color: #495057;
+}
+.buttons {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 1rem;
 }
 
 .btn {
   padding: 15px;
   border-radius: 10px;
-  width: 300px;
+  width: 80%;
 }
 
 .btn_encrypter {
-  background-color: #4f46e5;
+  background-color: #0369a1;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
+
 .btn_decryptor {
-  background-color: #f3f5fc;
-  border-color: #4f46e5;
+  background-color: #0284c7;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
+
+.btn_clear {
+  background-color: #0ea5e9;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn_icons {
+  width: 25px;
+  color: #e2e8f0;
+}
+
 .container_secondary {
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5rem;
   border-radius: 32px;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  padding: 10px;
+  padding: 2rem;
   text-align: center;
+  align-items: center;
 }
 .text_encrypted {
   display: none;
   border: none;
   outline: none;
   font-size: 1.5rem;
-  height: 80%;
+  height: 100%;
+  width: 100%;
+}
+.div_secondary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .image_search {
   display: none;
+  width: max-content;
 }
 
 .message_not_found {
@@ -94,16 +138,24 @@ body {
 }
 
 footer {
-  background-color: chocolate;
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: end;
   font-size: large;
   align-items: center;
 }
+footer p {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.icons_socials a img {
+  width: 1.5rem;
+}
 
 @media screen and (min-width: 640px) {
-  .container_buttons {
+  .buttons {
     display: flex;
     flex-direction: row;
     gap: 1rem;
@@ -117,6 +169,9 @@ footer {
 }
 
 @media screen and (min-width: 1024px) {
+  body {
+    padding-right: 5rem;
+  }
   .container_main {
     display: grid;
     grid-template-columns: 70% 30%;
