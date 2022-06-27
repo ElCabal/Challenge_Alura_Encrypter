@@ -91,7 +91,10 @@ btnCopy.addEventListener("click", function copyTxt() {
 function decrypterTxt() {
   const txtEncrypted = inputTxt.value;
   if (txtEncrypted === "") {
-    return console.log("Por favor ingresar texto");
+    return Swal.fire({
+      icon: "error",
+      title: "Introduce un texto",
+    });
   } else {
     let txtDecrypted = txtEncrypted
       .replace(/ai/gim, "a")
