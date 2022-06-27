@@ -21,11 +21,20 @@ const btnClear = document
  * displays it in the textarea.
  */
 function encrypterTxt() {
-  const text = inputTxt.value;
+  let text = inputTxt.value;
+  const reg = /[A-Z\u00C0-\u017F]/g;
+  const res = text.match(reg);
+
   if (text === "") {
-    return console.log("Por favor introducir un texto");
-  } else if (text === /[A-Z]+/gÑm) {
-    return console.log("No se puede introducir texto en mayúscula");
+    return Swal.fire({
+      icon: "error",
+      title: "Introduce un texto",
+    });
+  } else if (res) {
+    return Swal.fire({
+      icon: "error",
+      title: "No se permiten letras mayúscula ni acentos",
+    });
   } else {
     const encrypt = [...text].map((elem) => {
       if (elem === "a") {
@@ -42,21 +51,34 @@ function encrypterTxt() {
         return elem;
       }
     });
-    console.log(encrypt);
     inputTxt.value = "";
     hiddenDiv.style.display = "none";
     textEncrypted.style.display = "block";
     btnCopy.style.display = "block";
 
     const joinTxt = encrypt.join("");
-    console.log(joinTxt);
     textEncrypted.value = joinTxt;
+
+    Swal.fire({
+      icon: "success",
+      title: "¡Texto encriptado!",
+      showConfirmButton: false,
+      timer: 1700,
+    });
   }
 }
 
 /* Copying the text from the textarea to the input field. */
 btnCopy.addEventListener("click", function copyTxt() {
-  inputTxt.value = textEncrypted.value;
+  /*  inputTxt.value = textEncrypted.value; */
+  textEncrypted.select();
+  document.execCommand("copy");
+  Swal.fire({
+    icon: "success",
+    title: "¡Texto copiado!",
+    showConfirmButton: false,
+    timer: 1000,
+  });
   textEncrypted.style.display = "none";
   btnCopy.style.display = "none";
   hiddenDiv.style.display = "flex";
@@ -83,6 +105,13 @@ function decrypterTxt() {
     btnCopy.style.display = "block";
     textEncrypted.value = txtDecrypted;
     inputTxt.value = "";
+
+    Swal.fire({
+      icon: "success",
+      title: "¡Texto desencriptado!",
+      showConfirmButton: false,
+      timer: 1700,
+    });
   }
 }
 
@@ -96,3 +125,5 @@ function clearText() {
   hiddenDiv.style.display = "flex";
   btnCopy.style.display = "none";
 }
+
+console.log("hola");
