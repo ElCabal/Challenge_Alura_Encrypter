@@ -24,6 +24,8 @@ function encrypterTxt() {
   const text = inputTxt.value;
   if (text === "") {
     return console.log("Por favor introducir un texto");
+  } else if (text === /[A-Z]+/gim) {
+    return console.log("No se puede introducir texto en mayúscula");
   } else {
     const encrypt = [...text].map((elem) => {
       if (elem === "a") {
