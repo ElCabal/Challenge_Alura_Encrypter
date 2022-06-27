@@ -90,10 +90,17 @@ btnCopy.addEventListener("click", function copyTxt() {
  */
 function decrypterTxt() {
   const txtEncrypted = inputTxt.value;
+  const reg = /[A-Z\u00C0-\u017F]/g;
+  const res = txtEncrypted.match(reg);
   if (txtEncrypted === "") {
     return Swal.fire({
       icon: "error",
       title: "Introduce un texto",
+    });
+  } else if (res) {
+    return Swal.fire({
+      icon: "error",
+      title: "No se permiten letras mayúscula ni acentos",
     });
   } else {
     let txtDecrypted = txtEncrypted
