@@ -24,7 +24,7 @@ function encrypterTxt() {
   const text = inputTxt.value;
   if (text === "") {
     return console.log("Por favor introducir un texto");
-  } else if (text === /[A-Z]+/gim) {
+  } else if (text === /[A-Z]+/gÑm) {
     return console.log("No se puede introducir texto en mayúscula");
   } else {
     const encrypt = [...text].map((elem) => {
@@ -59,7 +59,7 @@ btnCopy.addEventListener("click", function copyTxt() {
   inputTxt.value = textEncrypted.value;
   textEncrypted.style.display = "none";
   btnCopy.style.display = "none";
-  hiddenDiv.style.display = "block";
+  hiddenDiv.style.display = "flex";
 });
 
 /**
@@ -93,6 +93,6 @@ function clearText() {
   inputTxt.value = "";
   textEncrypted.value = "";
   textEncrypted.style.display = "none";
-  hiddenDiv.style.display = "block";
+  hiddenDiv.style.display = "flex";
   btnCopy.style.display = "none";
 }
